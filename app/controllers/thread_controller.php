@@ -169,7 +169,7 @@ class ThreadController extends AppController
 
             case 'create_end':
                 $comment->user_id = $user['user_id'];
-                $comment->body = $_SESSION['username']." by ".$user_comment;
+                $comment->body = $_SESSION['username']." : ".$user_comment;
 				$thread->title = $title." by: ".$_SESSION['username'];
 
                 try {
