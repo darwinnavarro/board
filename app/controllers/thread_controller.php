@@ -226,7 +226,9 @@ class ThreadController extends AppController
 	        $username = $_SESSION['user'];
 		    $login['username'] = $_SESSION['user'];
             $login['id'] = $_SESSION['user_id'];
-        }
+        }else{
+		    check_session();
+		}
 	}
 }
 ?>
