@@ -151,7 +151,7 @@ class ThreadController extends AppController
 
     public function create()
     {
-        check_session();
+        check_session();               
         $thread = new Thread;
         $comment = new Comment;
         $user = array(
@@ -162,7 +162,7 @@ class ThreadController extends AppController
         $thread_exist = Thread::isThreadExisting($title, Param::get('user_id'));
         $page = Param::get('page_next', 'create');
         $user_comment = Param::get('body');
-		
+		       
         switch ($page) {
             case 'create':
                 break;

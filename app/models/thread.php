@@ -66,15 +66,9 @@ class Thread extends AppModel
         $offset = ($page - 1) * Thread::THREAD_COMMENT_LIMIT;
         $threads = array();
         $db = DB::conn();
-        /*$countThread = $db->value(
-            'SELECT count(id) FROM thread where user_id=?',
-            array($user_id)
-        );*/
+     
         $countThread = $db->value('SELECT count(id) FROM thread');
-			
-        /*$query="SELECT * FROM thread where user_id=? LIMIT "
-            . Thread::THREAD_COMMENT_LIMIT . " OFFSET " . $offset;*/
-
+		
         $query="SELECT * FROM thread LIMIT "
             . Thread::THREAD_COMMENT_LIMIT . " OFFSET " . $offset;
 			
